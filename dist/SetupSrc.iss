@@ -18,17 +18,33 @@ AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
-AppUpdatesURL={#MyAppURL}
+AppUpdatesURL={#MyAppURL}releases
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=C:\Users\Matheus\Documents\GitHub\SharpHash\LICENSE
 InfoBeforeFile=C:\Users\Matheus\Documents\GitHub\SharpHash\info.txt
 OutputDir=C:\Users\Matheus\Documents\GitHub\SharpHash\dist
-OutputBaseFilename=setup
+OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 SetupIconFile=C:\Users\Matheus\Documents\GitHub\SharpHash\SharpHash\assets\icon.ico
 Compression=lzma
 SolidCompression=yes
+VersionInfoVersion={#MyAppVersion}
+VersionInfoCompany=Matheus Silva
+VersionInfoDescription=A hash generation util.
+VersionInfoTextVersion=Default {#MyAppVersion}
+VersionInfoCopyright=(c) 2015 Matheus Silva
+VersionInfoProductName={#MyAppName}
+VersionInfoProductVersion={#MyAppVersion}
+ArchitecturesAllowed=x86 x64
+VersionInfoProductTextVersion={#MyAppVersion}
+AllowRootDirectory=True
+EnableDirDoesntExistWarning=True
+UninstallDisplayIcon={app}\SharpHash.exe
+ShowTasksTreeLines=True
+AlwaysShowGroupOnReadyPage=True
+AlwaysShowDirOnReadyPage=True
+MinVersion=0,6.1
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -41,6 +57,7 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 Source: "C:\Users\Matheus\Documents\GitHub\SharpHash\SharpHash\bin\Release\SharpHash.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Matheus\Documents\GitHub\SharpHash\SharpHash\bin\Release\SharpHash.exe.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Matheus\Documents\GitHub\SharpHash\SharpHash\bin\Release\SharpHash.tar.gz"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\diagnose.py"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
