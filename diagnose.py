@@ -4,12 +4,13 @@
 
 import platform as sysinfo
 import base64 as encoder
+import json
 
 nl = '\n'
 EI = sysinfo.platform() + nl + sysinfo.machine() + nl + sysinfo.processor() + nl + sysinfo.system() + ' ' + sysinfo.version()
 
 
-file = open("system.info", "w+")
+file = open(".sysinfo", "w+")
 file.write(EI)
 file.close()
 

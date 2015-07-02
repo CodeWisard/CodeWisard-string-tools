@@ -58,6 +58,7 @@ Source: "C:\Users\Matheus\Documents\GitHub\SharpHash\SharpHash\bin\Release\Sharp
 Source: "C:\Users\Matheus\Documents\GitHub\SharpHash\SharpHash\bin\Release\SharpHash.exe.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Matheus\Documents\GitHub\SharpHash\SharpHash\bin\Release\SharpHash.tar.gz"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\diagnose.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\SharpHash\assets\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -69,3 +70,6 @@ Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Fil
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+
+[Registry]
+Root: "HKCR"; Subkey: ".shdi"; ValueType: string; ValueData: "SharpHashDiagnoseLog"; Flags: createvalueifdoesntexist uninsdeletevalue

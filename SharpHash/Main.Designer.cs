@@ -42,6 +42,7 @@
             this.TimeStampDisplay = new System.Windows.Forms.TextBox();
             this.RD = new System.Windows.Forms.CheckBox();
             this.VersionLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // KeyRefresh
@@ -161,11 +162,22 @@
             this.VersionLabel.TabIndex = 10;
             this.VersionLabel.Text = "Version Not Found";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("FontAwesome", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(316, 273);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 19);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 348);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.RD);
             this.Controls.Add(this.TimeStampDisplay);
@@ -203,6 +215,7 @@
         private System.Windows.Forms.TextBox TimeStampDisplay;
         private System.Windows.Forms.CheckBox RD;
         private System.Windows.Forms.Label VersionLabel;
+        private System.Windows.Forms.Label label4;
     }
 }
 

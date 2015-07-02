@@ -188,3 +188,8 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 *.exe
+
+#Raw Art
+data/*
+!data/*.cwp
+!data/
