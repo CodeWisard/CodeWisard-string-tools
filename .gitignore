@@ -193,3 +193,5 @@ ModelManifest.xml
 data/*
 !data/*.cwp
 !data/
+
+dist/*
