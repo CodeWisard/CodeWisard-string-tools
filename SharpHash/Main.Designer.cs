@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.KeyRefresh = new System.Windows.Forms.Timer(this.components);
-            this.RandomDataInput = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.StringInput = new System.Windows.Forms.TextBox();
             this.Start = new System.Windows.Forms.Button();
@@ -43,6 +42,9 @@
             this.RD = new System.Windows.Forms.CheckBox();
             this.VersionLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.URD = new System.Windows.Forms.CheckBox();
+            this.Randomart = new System.Windows.Forms.GroupBox();
+            this.Lenght = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // KeyRefresh
@@ -50,20 +52,6 @@
             this.KeyRefresh.Enabled = true;
             this.KeyRefresh.Interval = 1000;
             this.KeyRefresh.Tick += new System.EventHandler(this.KeyRefresh_Tick);
-            // 
-            // RandomDataInput
-            // 
-            this.RandomDataInput.AcceptsTab = true;
-            this.RandomDataInput.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.RandomDataInput.DetectUrls = false;
-            this.RandomDataInput.EnableAutoDragDrop = true;
-            this.RandomDataInput.Location = new System.Drawing.Point(13, 13);
-            this.RandomDataInput.Name = "RandomDataInput";
-            this.RandomDataInput.Size = new System.Drawing.Size(576, 173);
-            this.RandomDataInput.TabIndex = 0;
-            this.RandomDataInput.Text = "";
-            this.RandomDataInput.TextChanged += new System.EventHandler(this.RandomDataInput_TextChanged);
-            this.RandomDataInput.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RandomDataInput_MouseMove);
             // 
             // label1
             // 
@@ -135,7 +123,7 @@
             // 
             // TimeStampDisplay
             // 
-            this.TimeStampDisplay.Location = new System.Drawing.Point(347, 272);
+            this.TimeStampDisplay.Location = new System.Drawing.Point(368, 275);
             this.TimeStampDisplay.Name = "TimeStampDisplay";
             this.TimeStampDisplay.ReadOnly = true;
             this.TimeStampDisplay.Size = new System.Drawing.Size(221, 20);
@@ -166,17 +154,50 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("FontAwesome", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(316, 273);
+            this.label4.Location = new System.Drawing.Point(337, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 19);
             this.label4.TabIndex = 11;
             this.label4.Text = "";
+            // 
+            // URD
+            // 
+            this.URD.AutoSize = true;
+            this.URD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.URD.Location = new System.Drawing.Point(199, 276);
+            this.URD.Name = "URD";
+            this.URD.Size = new System.Drawing.Size(114, 17);
+            this.URD.TabIndex = 12;
+            this.URD.Text = "use randomart data";
+            this.URD.UseVisualStyleBackColor = true;
+            // 
+            // Randomart
+            // 
+            this.Randomart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Randomart.Location = new System.Drawing.Point(12, 12);
+            this.Randomart.Name = "Randomart";
+            this.Randomart.Size = new System.Drawing.Size(577, 172);
+            this.Randomart.TabIndex = 13;
+            this.Randomart.TabStop = false;
+            this.Randomart.Text = "Randomart";
+            // 
+            // Lenght
+            // 
+            this.Lenght.AutoSize = true;
+            this.Lenght.Location = new System.Drawing.Point(249, 224);
+            this.Lenght.Name = "Lenght";
+            this.Lenght.Size = new System.Drawing.Size(40, 13);
+            this.Lenght.TabIndex = 14;
+            this.Lenght.Text = "Lenght";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 348);
+            this.Controls.Add(this.Lenght);
+            this.Controls.Add(this.Randomart);
+            this.Controls.Add(this.URD);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.RD);
@@ -188,7 +209,6 @@
             this.Controls.Add(this.Start);
             this.Controls.Add(this.StringInput);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.RandomDataInput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
@@ -204,7 +224,6 @@
         #endregion
 
         private System.Windows.Forms.Timer KeyRefresh;
-        private System.Windows.Forms.RichTextBox RandomDataInput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox StringInput;
         private System.Windows.Forms.Button Start;
@@ -216,6 +235,9 @@
         private System.Windows.Forms.CheckBox RD;
         private System.Windows.Forms.Label VersionLabel;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox URD;
+        private System.Windows.Forms.GroupBox Randomart;
+        private System.Windows.Forms.Label Lenght;
     }
 }
 

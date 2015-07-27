@@ -46,5 +46,17 @@ namespace SharpHash.Properties {
                 this["RD"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool URD {
+            get {
+                return ((bool)(this["URD"]));
+            }
+            set {
+                this["URD"] = value;
+            }
+        }
     }
 }

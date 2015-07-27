@@ -7,9 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography;
-using System.Security.Util;
-using System.Text.RegularExpressions;
+using CryptoApi;
 
 namespace SharpHash
 {
@@ -20,11 +18,6 @@ namespace SharpHash
         public Main()
         {
             InitializeComponent();
-        }
-
-        private void RandomDataInput_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void RandomDataInput_MouseMove(object sender, MouseEventArgs e)
@@ -40,32 +33,25 @@ namespace SharpHash
 
         private void Start_Click(object sender, EventArgs e)
         {
-            string src = StringInput.Text + UnixTimestamp.ToString() + RandomDataInput.Text;
-            byte[] src_prep = ASCIIEncoding.ASCII.GetBytes(src);
-            byte[] hash;
-            if (Algorithm.Text == null || Algorithm.Text == "" || Algorithm.Text == "Algorithm")
+            string src;
+            if (URD.Checked)
             {
-                hash = ((HashAlgorithm)CryptoConfig.CreateFromName("MD5")).ComputeHash(src_prep);
+                src = StringInput.Text + UnixTimestamp.ToString();
             }
             else
             {
-                hash = ((HashAlgorithm)CryptoConfig.CreateFromName(Algorithm.Text)).ComputeHash(src_prep);
+                src = StringInput.Text;
             }
-            
-            if (RD.Checked)
-            {
-                Output.Text = BitConverter.ToString(hash).Replace("-", string.Empty);
-            }
-            else
-            {
-                Output.Text = BitConverter.ToString(hash);
-            }
+            string output = Hash.CryptoGeneric(Algorithm.Text, src, RD.Checked);
+            Output.Text = output;
+            Lenght.Text = "Lenght: " + output.Length;
         }
 
         private void Main_Shown(object sender, EventArgs e)
         {
             VersionLabel.Text = Properties.Settings.Default.Version;
             RD.Checked = Properties.Settings.Default.RD;
+            URD.Checked = Properties.Settings.Default.URD;
         }
 
         private void RD_CheckedChanged(object sender, EventArgs e)
@@ -77,6 +63,14 @@ namespace SharpHash
             else
             {
                 Properties.Settings.Default.RD = false;
+            }
+            if (URD.Checked)
+            {
+                Properties.Settings.Default.URD = true;
+            }
+            else
+            {
+                Properties.Settings.Default.URD = false;
             }
         }
 
