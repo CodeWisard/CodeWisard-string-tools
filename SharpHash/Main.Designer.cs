@@ -41,10 +41,14 @@
             this.TimeStampDisplay = new System.Windows.Forms.TextBox();
             this.RD = new System.Windows.Forms.CheckBox();
             this.VersionLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.URD = new System.Windows.Forms.CheckBox();
             this.Randomart = new System.Windows.Forms.GroupBox();
             this.Lenght = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.FileValidator = new System.Windows.Forms.ToolStripButton();
+            this.imgList = new System.Windows.Forms.ImageList(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // KeyRefresh
@@ -82,6 +86,7 @@
             // 
             // Algorithm
             // 
+            this.Algorithm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Algorithm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Algorithm.FormattingEnabled = true;
             this.Algorithm.Items.AddRange(new object[] {
@@ -93,7 +98,6 @@
             this.Algorithm.Name = "Algorithm";
             this.Algorithm.Size = new System.Drawing.Size(121, 21);
             this.Algorithm.TabIndex = 4;
-            this.Algorithm.Text = "Algorithm";
             // 
             // label2
             // 
@@ -123,7 +127,7 @@
             // 
             // TimeStampDisplay
             // 
-            this.TimeStampDisplay.Location = new System.Drawing.Point(368, 275);
+            this.TimeStampDisplay.Location = new System.Drawing.Point(368, 274);
             this.TimeStampDisplay.Name = "TimeStampDisplay";
             this.TimeStampDisplay.ReadOnly = true;
             this.TimeStampDisplay.Size = new System.Drawing.Size(221, 20);
@@ -150,16 +154,6 @@
             this.VersionLabel.TabIndex = 10;
             this.VersionLabel.Text = "Version Not Found";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("FontAwesome", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(337, 276);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 19);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "";
-            // 
             // URD
             // 
             this.URD.AutoSize = true;
@@ -174,9 +168,9 @@
             // Randomart
             // 
             this.Randomart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Randomart.Location = new System.Drawing.Point(12, 12);
+            this.Randomart.Location = new System.Drawing.Point(12, 28);
             this.Randomart.Name = "Randomart";
-            this.Randomart.Size = new System.Drawing.Size(577, 172);
+            this.Randomart.Size = new System.Drawing.Size(577, 156);
             this.Randomart.TabIndex = 13;
             this.Randomart.TabStop = false;
             this.Randomart.Text = "Randomart";
@@ -190,15 +184,55 @@
             this.Lenght.TabIndex = 14;
             this.Lenght.Text = "Lenght";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileValidator});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(601, 25);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // FileValidator
+            // 
+            this.FileValidator.Image = global::SharpHash.Properties.Resources.Hash_20_20;
+            this.FileValidator.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FileValidator.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.FileValidator.Name = "FileValidator";
+            this.FileValidator.Size = new System.Drawing.Size(94, 22);
+            this.FileValidator.Text = "File Validator";
+            this.FileValidator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FileValidator.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.FileValidator.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // imgList
+            // 
+            this.imgList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgList.ImageStream")));
+            this.imgList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgList.Images.SetKeyName(0, "clock.png");
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Image = global::SharpHash.Properties.Resources.Clock_20_20;
+            this.label4.Location = new System.Drawing.Point(327, 277);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "         ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 348);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.Lenght);
             this.Controls.Add(this.Randomart);
             this.Controls.Add(this.URD);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.RD);
             this.Controls.Add(this.TimeStampDisplay);
@@ -209,13 +243,13 @@
             this.Controls.Add(this.Start);
             this.Controls.Add(this.StringInput);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
-            this.ShowIcon = false;
             this.Text = "SharpHash";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Shown += new System.EventHandler(this.Main_Shown);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,10 +268,13 @@
         private System.Windows.Forms.TextBox TimeStampDisplay;
         private System.Windows.Forms.CheckBox RD;
         private System.Windows.Forms.Label VersionLabel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox URD;
         private System.Windows.Forms.GroupBox Randomart;
         private System.Windows.Forms.Label Lenght;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton FileValidator;
+        private System.Windows.Forms.ImageList imgList;
+        private System.Windows.Forms.Label label4;
     }
 }
 

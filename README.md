@@ -9,8 +9,9 @@ Designed to stay with the following specs in mind:
 
 Planned:
 * ~~v1.0.0~~
-* A complete rewrite and v2.0
-* A library to accomplish these tasks
+* ~~A complete rewrite and v2.0~~
+* ~~A library to accomplish these tasks~~
+* v2.0.0
 * AES encryption/decryption support
 * More tools
 

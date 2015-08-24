@@ -78,5 +78,11 @@ namespace SharpHash
         {
             Properties.Settings.Default.Save();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FileHashValidator val = new FileHashValidator();
+            val.Show();
+        }
     }
 }

@@ -14,4 +14,4 @@ file = open(".sysinfo", "w+")
 file.write(EI)
 file.close()
 
-print (encoder.b85encode(bytes(EI, "utf-8")))
+print (encoder.b64encode(bytes(EI, "utf-8"), altchars=None))

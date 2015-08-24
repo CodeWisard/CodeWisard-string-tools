@@ -13,12 +13,12 @@ namespace CryptoApi
     public class Hash
     {
         /// <summary>
-        /// Tis function dont have a hashing algorithm hard coded into it you need to specify one aconding to the docs;
+        /// Tis function dont have a hashing algorithm hard coded into it you need to specify one acording to the docs;
         /// </summary>
         /// <param name="algorithm"></param>
         /// <param name="input"></param>
         /// <param name="rd"></param>
-        /// <returns></returns>
+        /// <returns>the hashed string</returns>
         public static string CryptoGeneric(string algorithm, string input, bool rd)
         {
             string output;
@@ -40,6 +40,18 @@ namespace CryptoApi
             else
             {
                return output = BitConverter.ToString(hash);
+            }
+        }
+        public static bool ValidateFileByHash(string input, string hashToTest, string algorithm)
+        {
+            string hash = CryptoApi.Hash.CryptoGeneric(algorithm, input, true);
+            if(hash == hashToTest)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
