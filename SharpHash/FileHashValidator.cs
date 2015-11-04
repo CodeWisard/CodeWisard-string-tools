@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using CryptoApi;
@@ -74,8 +67,15 @@ namespace SharpHash
         private void saveReportTrigger_Click(object sender, EventArgs e)
         {
             saveFileDialog.ShowDialog();
-            string path = saveFileDialog.FileName;
-            File.WriteAllText(path, results.Text);
+            if(saveFileDialog.FileName != "" || saveFileDialog.FileName != null)
+            {
+                string path = saveFileDialog.FileName;
+                File.WriteAllText(path, results.Text);
+            }
+            else
+            {
+                SharpHash.Handlers.Error("Could not write to this file check if it is open on another program!", "Error!");
+            }
         }
     }
 }

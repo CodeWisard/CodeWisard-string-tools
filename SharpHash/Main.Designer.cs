@@ -48,6 +48,10 @@
             this.FileValidator = new System.Windows.Forms.ToolStripButton();
             this.imgList = new System.Windows.Forms.ImageList(this.components);
             this.label4 = new System.Windows.Forms.Label();
+            this.FileToHash = new System.Windows.Forms.OpenFileDialog();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Randomart.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,13 +171,15 @@
             // 
             // Randomart
             // 
+            this.Randomart.Controls.Add(this.textBox1);
+            this.Randomart.Controls.Add(this.label5);
             this.Randomart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Randomart.Location = new System.Drawing.Point(12, 28);
             this.Randomart.Name = "Randomart";
             this.Randomart.Size = new System.Drawing.Size(577, 156);
             this.Randomart.TabIndex = 13;
             this.Randomart.TabStop = false;
-            this.Randomart.Text = "Randomart";
+            this.Randomart.Text = "File Tools";
             // 
             // Lenght
             // 
@@ -223,6 +229,26 @@
             this.label4.Text = "         ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // FileToHash
+            // 
+            this.FileToHash.FileName = "openFileDialog1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "File to hash";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(65, 17);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(264, 20);
+            this.textBox1.TabIndex = 1;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +274,8 @@
             this.Text = "SharpHash";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Shown += new System.EventHandler(this.Main_Shown);
+            this.Randomart.ResumeLayout(false);
+            this.Randomart.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -275,6 +303,9 @@
         private System.Windows.Forms.ToolStripButton FileValidator;
         private System.Windows.Forms.ImageList imgList;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.OpenFileDialog FileToHash;
     }
 }
 

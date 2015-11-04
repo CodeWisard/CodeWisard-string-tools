@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CryptoApi;
 
@@ -83,6 +76,13 @@ namespace SharpHash
         {
             FileHashValidator val = new FileHashValidator();
             val.Show();
+        }
+    }
+    public class Handlers
+    {
+        public static void Error(string msg, string title)
+        {
+            MessageBox.Show(msg, title, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
         }
     }
 }
